@@ -1,0 +1,123 @@
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('../fonts/SFProDisplay-Bold.woff2') format('woff2'),
+    url('../fonts/SFProDisplay-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Pro Text';
+    src: url('../fonts/SFProText-Regular.woff2') format('woff2'),
+    url('../fonts/SFProText-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+html, body {
+    height: 100%;
+    font-family: 'SF Pro Text', sans-serif;
+    background: #000000;
+}
+
+.center{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid{
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    gap: 16px;
+    position: relative;
+    width: 368px;
+    background: #262626;
+    border-radius: 16px;
+    height: 100%;
+}
+
+.grid h1{
+    font-family: 'SF Pro Display';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 37px;
+    line-height: 44px;
+    color: #fff;
+}
+
+.grid .list{
+    padding: 24px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12), 0px 16px 32px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    cursor: move;
+    z-index: 99;
+}
+
+.grid .list h2{
+    font-family: 'SF Pro Text';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: #fff;
+}
+
+.grid .list p{
+    font-family: 'SF Pro Text';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.grid h1, .list h2, .list p{
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.grid .rsp{
+    height: 500px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.color-pink{
+    background: #C440A1;
+}
+
+.color-periwinkle{
+    background: #6A6DCD;
+}
+
+.color-red{
+    background: #D93535;
+}
+
+.color-blue{
+    background: #307FE2;
+}
+
+.color-green{
+    background: #00A88B;
+}
+
+.grid .list .badge{
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 2px;
+}
+
+@media (max-width: 1440px) {
+    .grid{
+        width: 100%;
+    }
+}
