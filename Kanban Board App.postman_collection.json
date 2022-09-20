@@ -1,0 +1,303 @@
+{
+	"info": {
+		"_postman_id": "f70e5a7f-f587-4967-9019-61875253afd1",
+		"name": "Kanban Board App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23034981"
+	},
+	"item": [
+		{
+			"name": "GET ALL CARDS",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL}}/card/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"card",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PAGINATION",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL}}/card/?offset=10&limit=5",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"card",
+						""
+					],
+					"query": [
+						{
+							"key": "offset",
+							"value": "10"
+						},
+						{
+							"key": "limit",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FILTER BY TITLE",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL}}/card/?q=Norbert",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"card",
+						""
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "Norbert"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FILTER BY LIST",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL}}/card/?list=2",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"card",
+						""
+					],
+					"query": [
+						{
+							"key": "list",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SORT BY",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL}}/card/?sortBy=card_id&sort=DESC",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"card",
+						""
+					],
+					"query": [
+						{
+							"key": "sortBy",
+							"value": "card_id"
+						},
+						{
+							"key": "sort",
+							"value": "DESC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CARD CREATE",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"list\": 1,\n    \"title\": \"dasdsad\",\n    \"content\": \"ddasdassdasdasadasdsa\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/card/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"card",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET CARD",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL}}/card/1",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"card",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CARD UPDATE",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"list\": \"dasdasdsadsa\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/card/1",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"card",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE CARD",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL}}/card/26",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"card",
+						"26"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://127.0.0.1:8000/api",
+			"type": "string"
+		}
+	]
+}
